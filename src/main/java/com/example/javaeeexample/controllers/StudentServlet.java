@@ -37,21 +37,22 @@ public class StudentServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String action = request.getServletPath();
+//        System.out.println(action);
         try {
             switch (action) {
-                case "/new":
+                case "/student-servlet/studentForm":
                     showNewForm(request, response);
                     break;  
-                case "/insert":
+                case "/student-servlet/insert":
                     insertStudent(request, response);
                     break;
-                case "/delete":
+                case "/student-servlet/delete":
                     deleteStudent(request, response);
                     break;
-                case "/edit":
+                case "/student-servlet/edit":
                     showEditForm(request, response);
                     break;
-                case "/update":
+                case "/student-servlet/update":
                     updateStudent(request, response);
                     break;
                 default:
@@ -102,7 +103,11 @@ public class StudentServlet extends HttpServlet {
 
     private void updateStudent(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException {
+        String path = request.getContextPath();
+        System.out.println(request.getServletPath());
+        System.out.println(path);
         int id = Integer.parseInt(request.getParameter("id"));
+        System.out.println(id);
         String title = request.getParameter("firstName");
         String author = request.getParameter("lastName");
         String gender = request.getParameter("gender");

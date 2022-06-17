@@ -40,7 +40,13 @@
     
     <servlet-mapping>
         <servlet-name>StudentServlet</servlet-name>
-        <url-pattern>/student-servlet</url-pattern>
+        <url-pattern>/student-servlet/list</url-pattern>
+        <url-pattern>/student-servlet/insert</url-pattern>
+        <url-pattern>/student-servlet/studentForm</url-pattern>
+        <url-pattern>/student-servlet/edit</url-pattern>
+        <url-pattern>/student-servlet/update</url-pattern>
+        <url-pattern>/student-servlet/delete</url-pattern>
+
     </servlet-mapping>
     
 
@@ -49,7 +55,7 @@
     <servlet-mapping>
         <servlet-name>helloServlet</servlet-name>
         <url-pattern>/hello-servlet/list</url-pattern>
-        <url-pattern>/hello-servlet/studentForm</url-pattern>
+        <url-pattern>/hello-servlet/StudentForm</url-pattern>
         <url-pattern>/hello-servlet</url-pattern>
     </servlet-mapping>
 

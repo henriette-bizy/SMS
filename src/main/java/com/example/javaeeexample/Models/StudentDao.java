@@ -42,7 +42,7 @@ public class StudentDao {
     }
 
     public boolean insertStudent(Student student) throws SQLException {
-        String sql = "INSERT INTO student (first_name, last_name, gender) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO student (firstName, lastName, gender) VALUES (?, ?, ?)";
         connect();
 
         PreparedStatement statement = jdbcConnection.prepareStatement(sql);
@@ -69,8 +69,8 @@ public class StudentDao {
 
         while (resultSet.next()) {
             Long id = resultSet.getLong("id");
-            String firstName = resultSet.getString("first_name");
-            String lastName = resultSet.getString("last_name");
+            String firstName = resultSet.getString("firstName");
+            String lastName = resultSet.getString("lastName");
             String gender = resultSet.getString("gender");
 
             Student Student = new Student(id, firstName, lastName, gender);
@@ -100,7 +100,7 @@ public class StudentDao {
     }
 
     public boolean updateStudent(Student Student) throws SQLException {
-        String sql = "UPDATE student SET first_name = ?, last_name = ?, gender = ?";
+        String sql = "UPDATE student SET firstName = ?, lastName = ?, gender = ?";
         sql += " WHERE id = ?";
         connect();
 
@@ -130,8 +130,8 @@ public class StudentDao {
 
         if (resultSet.next()) {
 
-            String firstName = resultSet.getString("first_name");
-            String lastName = resultSet.getString("last_name");
+            String firstName = resultSet.getString("firstName");
+            String lastName = resultSet.getString("lastName");
             String gender = resultSet.getString("gender");
 
             student = new Student(new Long(stdId), firstName, lastName, gender);

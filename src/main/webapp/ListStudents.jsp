@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Students Managment</title>
@@ -9,9 +9,9 @@
 <center>
     <h1>Students Management</h1>
     <h2>
-        <a href="/students_record/new">Add New Student</a>
+        <a href="studentForm">Add New Student</a>
         &nbsp;&nbsp;&nbsp;
-        <a href="/students_record/list">List All Students</a>
+        <a href="list">List All Students</a>
 
     </h2>
 </center>
@@ -32,9 +32,9 @@
                 <td><c:out value="${student.lastName}" /></td>
                 <td><c:out value="${student.gender}" /></td>
                 <td>
-                    <a href="/students_record/edit?id=<c:out value='${student.id}' />">Edit</a>
+                    <a href="edit?id=<c:out value='${student.id}' />">Edit</a>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="/students_record/delete?id=<c:out value='${student.id}' />">Delete</a>
+                    <a href="delete?id=<c:out value='${student.id}' />">Delete</a>
                 </td>
             </tr>
         </c:forEach>

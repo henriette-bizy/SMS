@@ -37,6 +37,7 @@
                     <a href="delete?id=<c:out value='${student.id}' />">Delete</a>
                 </td>
             </tr>
+<%--            you can also implement the loop using scriplet and use for or while--%>
         </c:forEach>
     </table>
 </div>

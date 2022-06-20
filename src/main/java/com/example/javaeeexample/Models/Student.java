@@ -1,9 +1,20 @@
 package com.example.javaeeexample.Models;
 
+import jakarta.persistence.*;
+
+import java.util.UUID;
+
+@Table(name = "student")
 public class Student {
+    @Id
+    @GeneratedValue
+    @Column(name = "student-id")
     private Long id;
+    @Column(name = "first-name", nullable = false,length = 120)
     private String firstName;
+    @Column(name = "last-name", nullable = false)
     private String lastName;
+    @Column(name = "gender", nullable = false)
     private String gender;
 
     public Student() {
